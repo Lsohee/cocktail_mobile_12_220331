@@ -1,0 +1,110 @@
+*{
+  box-sizing: border-box;
+}
+#root{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#root div{
+  /* border: 3px solid #FFE9EB; */
+  width: 100%;
+}
+/* -------header------------------- */
+#root>div:nth-child(1){
+  width:fit-content;
+  height:5%;
+  background-color: #FFE9EB;
+}
+
+/* ------move----------------------- */
+#root>div:nth-child(2){
+  height:24%;
+  background-color: gray;
+
+  /* border: 3px solid #FFE9EB; */
+
+}
+
+/* ------main----------------------- */
+#root>div:nth-child(3){
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  
+  height:35%;
+  /* background-color: #FFE9EB; */
+}
+/* 질문
+무엇을 -- #Q1>div:nth-child(1)과 #Q1>div:nth-child(3)번을 
+
+어떻게 하고싶어서--각각 #Q1>div:nth-child(2)과 #Q1>div:nth-child(4)로 겹치게 놓고 싶음
+1.이렇게 했는데 -- #Q1의 div의 크기를 모두 절대값으로 바꾼다음 z-index를 쓰기 위해 #Q1에 display:flex;를 줌
+이렇게 됨 -- div들의 크기가 변함 
+
+절대값으로 지정해도 display:flex;가 영향을 준다
+
+2.이렇게 했는데 -- #Q1의 div을 2개로 만들고 그안의 div을 각각하나씩 만들어줬다 
+그리고 #Q1>div div들을 position값을 주어서 강제 지정했다
+  이렇게 됨 -- 원하는 데로 제목쓸 자리를 만들수 있게되었다. 
+  그러나 #Q1>div:nth-child(2)>div:nth-child(2)의 위치또한 
+  position으로 잡아야 한다
+
+  #Q1>div:nth-child(2)에 display:flex;를 주지 않아서 
+#Q1>div:nth-child(2)>div:nth-child(2)의 크기를 상대값으로 줘도 
+#Q1>div:nth-child(2)>div:nth-child(1)의 크기에 변화를 주지 않는 듯하다
+  
+*/
+#root>div:nth-child(3)>div:nth-child(1){
+  height:20%;
+  border: 3px solid #FFE9EB;
+}
+#root>div:nth-child(3)>div:nth-child(1)>div{
+  background-color: #FFE9EB;
+  height:30px;
+  width:100px;
+  position: relative;
+  top:-10px;
+}
+
+
+/* border값때문에 root를 넘어가는 div이 발생
+box-sizing: border-box;로 해결
+  */
+
+  
+/* -------------------------------------- */
+#root>div:nth-child(3)>div:nth-child(2){
+  height:65%;
+  border: 3px solid #FFE9EB;
+  
+}
+#root>div:nth-child(3)>div:nth-child(2)>div:nth-child(1){
+  background-color: #FFE9EB;
+  height:30px;
+  width:100px;
+  position: relative;
+  top:-10px;
+}
+#root>div:nth-child(3)>div:nth-child(2)>div:nth-child(2){
+  background-color: 1rgb(191, 191, 247);
+  height:80%;
+  width:100%;
+  position: relative;
+  top:-10px;
+  /* left:20px; */
+  display: flex;
+}
+.key{
+  background-color: aliceblue;
+  height:100%;
+  width:25%;
+  margin:10px;
+}
+/* -------bottom-------------------- */
+#root>div:nth-child(4){
+  background-color: gray;
+
+  height:30%;
+}
